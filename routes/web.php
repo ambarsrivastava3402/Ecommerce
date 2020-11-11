@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserConroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/login','login');
+Route::post('/login',[UserConroller::class,'login']);

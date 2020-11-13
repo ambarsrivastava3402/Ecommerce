@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserConroller;
+use App\Http\Controllers\usercontroller;
+use App\Http\Controllers\productcontroller;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +16,9 @@ use App\Http\Controllers\UserConroller;
 | contains the "web" middleware group. Now create something great!
 |
 */
+route::view('/login','login');
+route::post('/login','usercontroller@login');
+route::get('/','productcontroller@show');
 
-Route::view('/login','login');
-Route::post('/login',[UserConroller::class,'login']);
+
+

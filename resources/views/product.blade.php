@@ -28,13 +28,15 @@
     @foreach ($products as $item)
     
       <div class="item {{$item['id']==1?'active':''}}">
+        <a href="detail/{{$item->id}}">
         <img class="slider-img" src="{{$item->gallery}}" style="width:100%;">
         <div class="carousel-caption">
           <h3>{{$item->name}}</h3>
           <p>{{$item->category}}</p>
         </div>
+        </a>
       </div>
-
+        
     @endforeach
 
   
@@ -51,6 +53,22 @@
     </a>
   </div>
 </div>
+ <div class="trending-wrapper">
+    <h3>Trending products</h3>
+    @foreach ($products as $item)
+    
+      <div class="trending_item">
+        <a href="detail/{{$item->id}}">
+        <img class="trending-image" src="{{$item->gallery}}" style="width:100%;">
+        <div class="">
+          <h3>{{$item->name}}</h3>
+       </div>
+       </a>
+       </div>
+    @endforeach
+
+  
+    </div>
 
 </body>
 </html>

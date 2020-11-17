@@ -25,8 +25,22 @@
 		height: 400px !important
 	}
 	.custom-product{
-		height: 900px;
+		height: 500px;
 		
+	}
+	.trending-image{
+		height: 100px;
+	}
+	.trending_item{
+		float: left;
+		width: 20%
+
+	}
+	.trending-wrapper{
+		margin: 30px;
+	}
+	.detail-img{
+		height: 200px;
 	}
 </style>
 </html>

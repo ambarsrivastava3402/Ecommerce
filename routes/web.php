@@ -17,6 +17,9 @@ use App\Http\Controllers\productcontroller;
 |
 */
 route::view('/login','login');
+route::view('/register','registration');
+
+route::post('/registration','usercontroller@register');
 route::post('/login','usercontroller@login');
 route::get('/','productcontroller@show');
 route::get('/detail/{id}','productcontroller@detail');
@@ -26,5 +29,11 @@ Route::get('/logout', function () {
 	Session::forget('user');
     return redirect('/login');
 });
+route::get('/cartlist','productcontroller@cartlist');
+route::get('/removeitem/{id}','productcontroller@removeitem');
+route::get('/ordernow','productcontroller@ordernow');
+route::post('/orderplace','productcontroller@orderplace');
+route::get('/myorders','productcontroller@myorders');
+
 
 

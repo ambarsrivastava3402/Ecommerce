@@ -1,6 +1,10 @@
 <?php
 use App\Http\Controllers\productcontroller; 
-$total = productcontroller::cartitem();
+$total=0;
+if(Session::has('user'))
+{
+  $total = productcontroller::cartitem();
+}
 ?>
 
 
@@ -16,10 +20,10 @@ $total = productcontroller::cartitem();
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">orders</a>
+        <a class="nav-link" href="/myorders">orders</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href=>cart({{$total}})</a>
+        <a class="nav-link" href="/cartlist">cart({{$total}})</a>
       @if(Session::has('user'))
       </li>  
         <li class="nav-item dropdown">
@@ -33,6 +37,9 @@ $total = productcontroller::cartitem();
      @else
      <li class="nav-item">
         <a class="nav-link" href="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/register">Register Here!</a>
       </li>
     </ul>
     @endif

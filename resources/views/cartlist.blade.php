@@ -1,3 +1,11 @@
+<?php
+use App\Http\Controllers\productcontroller; 
+$total=0;
+if(Session::has('user'))
+{
+  $total = productcontroller::cartitem();
+}
+?>
 @extends('master')
 @section('content')
 
@@ -6,6 +14,14 @@
 <div class="col=sm-10">
     <div class="trending-wrapper">
     <h3>Result for products</h3>
+    @if($total== 0)
+    
+      
+ <a href="#" class="disabled btn btn-success" >Order Now</a><br><br>
+    
+    @else
+
+
     <a href="/ordernow" class="btn btn-success" >Order Now</a><br><br>
     @foreach ($products as $item)
     
@@ -35,6 +51,7 @@
 
         </div>
     @endforeach
+@endif
 	</div>
 		
 	
